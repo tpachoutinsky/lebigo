@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Lebigo</string>
+    <string name="euro">€</string>
+    <string name="dollar">$</string>
+</resources>
