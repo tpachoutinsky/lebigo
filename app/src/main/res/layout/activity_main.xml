@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
     <data>
-        <variable name="infoIhm" type="com.example.lebigo.DataForBinding"/>
+        <variable name="infoIhm" type="com.example.lebigo.DataForBindingViewModel"/>
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/main" android:layout_width="match_parent" android:layout_height="match_parent"
@@ -18,7 +18,7 @@
                         android:orientation="horizontal" android:layout_margin="20dp">
                     <TextView
                             android:id="@+id/textViewHaut" android:layout_width="40dp"
-                            android:layout_height="wrap_content" android:text="@{infoIhm.resultatHautFormatted}"
+                            android:layout_height="wrap_content" android:text="@{infoIhm.dataForBinding.resultatHautFormatted}"
                             android:layout_weight="1"/>
                     <EditText
                             android:id="@+id/editTextHaut" android:layout_width="0dp"
@@ -43,7 +43,7 @@
                         android:orientation="horizontal" android:layout_margin="20dp">
                     <TextView
                             android:id="@+id/textViewBas" android:layout_width="40dp"
-                            android:layout_height="wrap_content" android:text="@{infoIhm.resultatBasFormatted}"
+                            android:layout_height="wrap_content" android:text="@{infoIhm.dataForBinding.resultatBasFormatted}"
                             android:layout_weight="1"/>
                     <EditText
                             android:id="@+id/editTextBas" android:layout_width="0dp"
@@ -54,26 +54,29 @@
                         android:orientation="horizontal"
                         android:layout_width="332dp"
                         android:layout_height="241dp">
-                    <LinearLayout
-                            android:orientation="vertical"
+                    <RadioGroup
+                            android:id="@+id/radioGroupConversion"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" android:layout_weight="1">
+                            android:layout_height="wrap_content">
+
                         <RadioButton
-                                android:text="RadioButton"
+                                android:id="@+id/buttoneurodollar"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" android:id="@+id/radioButton4"
-                                android:layout_weight="1"/>
+                                android:layout_height="wrap_content"
+                                android:text="Euro -> Dollar"/>
+
                         <RadioButton
-                                android:text="RadioButton"
+                                android:id="@+id/buttoneuroyen"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" android:id="@+id/radioButton3"
-                                android:layout_weight="1"/>
+                                android:layout_height="wrap_content"
+                                android:text="Euro -> Yen"/>
+
                         <RadioButton
-                                android:text="RadioButton"
+                                android:id="@+id/buttondollaryen"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" android:id="@+id/radioButton"
-                                android:layout_weight="1"/>
-                    </LinearLayout>
+                                android:layout_height="wrap_content"
+                                android:text="Dollar -> Yen"/>
+                    </RadioGroup>
                 </LinearLayout>
             </LinearLayout>
         </RelativeLayout>
